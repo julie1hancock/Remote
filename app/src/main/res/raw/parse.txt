@@ -29,33 +29,15 @@
                     {"buttonKey": "button18"},
                     {"buttonKey": "button19"},
                     {"buttonKey": "button20"},
-                    {"buttonKey": "button21"},
-                    {"buttonKey": "button22"},
-                    {"buttonKey": "button23"},
-                    {"buttonKey": "button24"},
-                    {"buttonKey": "button25"},
-                    {"buttonKey": "button26"},
-                    {"buttonKey": "button27"},
-                    {"buttonKey": "button28"},
-                    {"buttonKey": "button29"},
-                    {"buttonKey": "button30"},
-                    {"buttonKey": "button31"},
-                    {"buttonKey": "button32"},
-                    {"buttonKey": "button33"},
-                    {"buttonKey": "button34"},
-                    {"buttonKey": "button35"},
-                    {"buttonKey": "button36"},
-                    {"buttonKey": "button37"},
-                    {"buttonKey": "button38"},
-                    {"buttonKey": "button39"},
-                    {"buttonKey": "button40"},
+                    {"buttonKey": "button21"}
+
                 ]
             },
             {
                 "numRows":"7",
                 "numCols":"3",
                 "deviceKey": "device2",
-                "deviceLabel": "two device",
+                "deviceLabel": "deviceB",
                 "buttons": [
                     {"buttonKey": "buttonA"},
                 ]
@@ -64,27 +46,27 @@
                 "numRows":"7",
                 "numCols":"3",
                 "deviceKey": "device3",
-                "deviceLabel": "neat device",
+                "deviceLabel": "deviceC",
                 "buttons": [
-                    {"buttonKey": "buttonB"},
+                    {"buttonKey": "buttonA"},
                 ]
             },
             {
                "numRows":"7",
                "numCols":"3",
                "deviceKey": "device4",
-               "deviceLabel": "fun device",
+               "deviceLabel": "deviceD",
                "buttons": [
-                   {"buttonKey": "buttonC"},
+                   {"buttonKey": "buttonA"},
                ]
            },
            {
                "numRows":"7",
                "numCols":"3",
                "deviceKey": "device5",
-               "deviceLabel": "nifty device",
+               "deviceLabel": "deviceE",
                "buttons": [
-                   {"buttonKey": "buttonD"},
+                   {"buttonKey": "buttonA"},
                ]
            }
         ]
