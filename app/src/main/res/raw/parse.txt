@@ -1,74 +1,44 @@
 {
-    "rooms": [{
+    "rooms": [
+    {
         "roomKey":"room1",
-        "roomLabel":"room one!",
+        "roomLabel":"family room",
         "devices":[
-            {
-                "numRows":"7",
-                "numCols":"3",
-                "deviceKey": "device1",
-                "deviceLabel": "cool device",
-                "buttons": [
-                    {"buttonKey": "button1"},
-                    {"buttonKey": "button2"},
-                    {"buttonKey": "button3"},
-                    {"buttonKey": "button4"},
-                    {"buttonKey": "button5"},
-                    {"buttonKey": "button6"},
-                    {"buttonKey": "button7"},
-                    {"buttonKey": "button8"},
-                    {"buttonKey": "button9"},
-                    {"buttonKey": "button10"},
-                    {"buttonKey": "button11"},
-                    {"buttonKey": "button12"},
-                    {"buttonKey": "button13"},
-                    {"buttonKey": "button14"},
-                    {"buttonKey": "button15"},
-                    {"buttonKey": "button16"},
-                    {"buttonKey": "button17"},
-                    {"buttonKey": "button18"},
-                    {"buttonKey": "button19"},
-                    {"buttonKey": "button20"},
-                    {"buttonKey": "button21"}
-
-                ]
-            },
-            {
-                "numRows":"7",
-                "numCols":"3",
-                "deviceKey": "device2",
-                "deviceLabel": "deviceB",
-                "buttons": [
-                    {"buttonKey": "buttonA"},
-                ]
-            },
-            {
-                "numRows":"7",
-                "numCols":"3",
-                "deviceKey": "device3",
-                "deviceLabel": "deviceC",
-                "buttons": [
-                    {"buttonKey": "buttonA"},
-                ]
-            },
-            {
-               "numRows":"7",
-               "numCols":"3",
-               "deviceKey": "device4",
-               "deviceLabel": "deviceD",
-               "buttons": [
-                   {"buttonKey": "buttonA"},
-               ]
-           },
-           {
-               "numRows":"7",
-               "numCols":"3",
-               "deviceKey": "device5",
-               "deviceLabel": "deviceE",
-               "buttons": [
-                   {"buttonKey": "buttonA"},
-               ]
-           }
+        {
+            "numRows":"7",
+            "numCols":"3",
+            "deviceKey": "roku",
+            "deviceLabel": "Roku",
+            "buttonKeys": ["menu", "pause", "fastFoward"]
+        }
         ]
-    }]
+    }
+    ],
+
+    "buttons":[
+    {
+        "buttonKey":"menu",
+        "buttonText": "Menu",
+        "imagePath": "menu.jpg",
+        "urlPrefix": "192.168.255.1",
+        "urlMiddle": "",
+        "urlSuffix": "suffixmenu"
+    },
+    {
+        "buttonKey":"pause",
+        "buttonText": "Pause",
+        "imagePath": "",
+        "urlPrefix": "2.2.2.2",
+        "urlMiddle": "pausemiddle",
+        "urlSuffix": "pausesuffix"
+    },
+    {
+        "buttonKey":"fastFoward",
+        "buttonText": "",
+        "imagePath": “ff.jpg",
+        "urlPrefix": "33.33",
+        "urlMiddle": "ffmid",
+        "urlSuffix": "ffsuffix"
+    }
+    ]
 }

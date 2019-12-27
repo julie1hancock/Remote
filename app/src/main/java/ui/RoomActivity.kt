@@ -1,5 +1,7 @@
 package ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +15,13 @@ import models.Room
 
 class RoomActivity : AppCompatActivity(){
 
+    companion object{
+        fun start(context: Context, roomKey: String){
+            val intent = Intent(context, RoomActivity::class.java)
+            intent.putExtra("roomKey", roomKey)
+            context.startActivity(intent)
+        }
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +31,8 @@ class RoomActivity : AppCompatActivity(){
         val adapter = RoomTabAdapter(supportFragmentManager,room)
         viewPager.adapter = adapter
         tabLayout.setupWithViewPager(viewPager)
+
+        toolbarTitle.text = room.roomLabel
 
         changeRoom.setOnClickListener {
             finish()

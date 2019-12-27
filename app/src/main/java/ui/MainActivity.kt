@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
 //        setSupportActionBar(toolbar)
 
         Parser().parse(resources.openRawResource(R.raw.parse))
+        if(Cache.remote.size == 1){
+            RoomActivity.start(this, Cache.remote.get(0).roomKey)
+        }
         roomsList.layoutManager = LinearLayoutManager(this)
         adapter = ChooseRoomAdapter(Cache.remote.rooms, this)
         roomsList.adapter = adapter
@@ -71,9 +74,7 @@ class ChooseRoomAdapter (
         fun bind(room: Room, context: Context){
             view.singleRoomButton.text = room.roomLabel
             view.singleRoomButton.setOnClickListener {
-                val intent = Intent(context, RoomActivity::class.java)
-                intent.putExtra("roomKey",room.roomKey)
-                context.startActivity(intent)
+                RoomActivity.start(context, room.roomKey)
             }
         }
     }

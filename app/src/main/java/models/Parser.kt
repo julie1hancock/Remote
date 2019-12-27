@@ -9,7 +9,9 @@ class Parser {
     fun parse(inputStream: InputStream) {
         var toParse: String = readFile(inputStream)
         val gson = Gson()
-        Cache.remote = gson.fromJson(toParse, Remote::class.java)
+        val o = gson.fromJson(toParse, TempRemote::class.java)
+        Cache.remote = o.toRoomList()
+        println("@")
     }
     private fun readFile(inputStream: InputStream): String {
         val inputStreamReader = InputStreamReader(inputStream)

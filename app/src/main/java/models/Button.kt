@@ -4,12 +4,18 @@ data class Button (
     val buttonKey: String,
 
     //null initially
-    val buttonText: String?,
-    val imagePath: String?,
-    val reqString: String?,
-    val ipType: IPType?
+    var buttonText: String? = null,
+    var imagePath: String? = null,
+    var urlPrefix: String? = null,
+    var urlMiddle: String? = null,
+    var urlSuffix: String? = null
+//    val ipType: IPType?
 ){
     override fun toString(): String {
-        return "KEY : $buttonKey"
+        return "Button(buttonKey='$buttonKey', buttonText=$buttonText, imagePath=$imagePath, urlPrefix=$urlPrefix, urlMiddle=$urlMiddle, urlSuffix=$urlSuffix)"
+    }
+
+    fun getURL(): String {
+        return "$urlPrefix/$urlMiddle/$urlSuffix"
     }
 }

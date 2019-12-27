@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -65,11 +66,36 @@ class DeviceAdapter (
     class ButtonHolder(v: View): RecyclerView.ViewHolder(v){
         private var view: View = v
 
-        fun bind(button: Button, context: Context) {
-            view.remoteButton.text = button.buttonKey ?: "A BUTTON HERE!"
+        fun bind(remoteButton: Button, context: Context) {
             view.remoteButton.setOnClickListener {
-                Toast.makeText(context, button.toString(), Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, remoteButton.getURL(), Toast.LENGTH_SHORT).show()
             }
+
+
+            if (remoteButton.buttonText.isNullOrBlank()) {
+                view.remoteButtonText.visibility = View.GONE
+                if (remoteButton.imagePath.isNullOrBlank()) {
+                    view.remoteButtonText.visibility = View.VISIBLE
+                    view.remoteButtonText.text = remoteButton.buttonKey
+
+                }
+            }
+            else {
+                view.remoteButtonText.visibility = View.VISIBLE
+                view.remoteButtonText.text = remoteButton.buttonText ?: "A BUTTON HERE!"
+            }
+
+
+
+            if (remoteButton.imagePath.isNullOrBlank()) {
+                view.remoteButtonImage.visibility = View.GONE
+            }
+            else {
+                view.remoteButtonImage.visibility = View.VISIBLE
+                //TODO: display image @ URL path
+            }
+
+
         }
 
     }
@@ -82,7 +108,7 @@ class DeviceAdapter (
     override fun getItemCount(): Int = buttons.size
 
     override fun onBindViewHolder(holder: ButtonHolder, position: Int) {
-        if(buttons[position] == null) return
+//        if(buttons[position] == null) return
 
         holder.bind(buttons[position], context)
     }
