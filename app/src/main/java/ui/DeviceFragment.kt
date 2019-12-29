@@ -2,25 +2,24 @@ package ui
 
 import android.content.Context
 import android.graphics.BitmapFactory
+import android.os.AsyncTask
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import hancock.julie.remote.R
+import http.Proxy
 import kotlinx.android.synthetic.main.fragment_device.*
 import kotlinx.android.synthetic.main.single_button.view.*
-import kotlinx.android.synthetic.main.single_room_row.view.*
 import models.Button
 import models.Cache
 import models.Device
-import android.graphics.drawable.Drawable
-import android.widget.ImageView
-import models.Parser
 
 
 class DeviceFragment : Fragment() {
@@ -77,9 +76,19 @@ class DeviceAdapter (
                 return
             }
 
+            view.remoteButton.setOnTouchListener { view, motionEvent ->
+                if (motionEvent.action == MotionEvent.ACTION_UP) {
+                    var i = 0; while(i < 1000){ i++ }
 
-            view.remoteButton.setOnClickListener {
-                Toast.makeText(context, remoteButton.getURL(), Toast.LENGTH_SHORT).show()
+                    view.remoteButton.alpha = 1.0f
+                    Toast.makeText(context, "Connecting to ::: ${remoteButton.getURL()}", Toast.LENGTH_SHORT).show()
+                    SendURLTask(context).execute(remoteButton.getURL())
+                }
+                else if(motionEvent.action == MotionEvent.ACTION_DOWN){
+                    view.remoteButton.alpha = 0.6f
+                }
+
+                true
             }
 
 
@@ -110,6 +119,16 @@ class DeviceAdapter (
 
     }
 
+    private class SendURLTask(private val context: Context) : AsyncTask<String, Void, String>() {
+        override fun doInBackground(vararg p0: String?): String {
+            return Proxy.send(p0[0].orEmpty())
+        }
+
+        override fun onPostExecute(result: String?) {
+            Toast.makeText(context, "Response :: $result", Toast.LENGTH_SHORT).show()
+        }
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ButtonHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.single_button, parent, false)
         return ButtonHolder(view)
@@ -135,6 +154,11 @@ private fun ImageView.setImage(remoteButton: Button) {
         "back.png" -> R.raw.back
         "settings.png" -> R.raw.settings
         "home.png" -> R.raw.home
+
+        "vol_down.png" -> R.raw.vol_down
+        "vol_up.png" -> R.raw.vol_up
+        "vol_mute.png" -> R.raw.vol_mute
+
 
 
         else -> null
