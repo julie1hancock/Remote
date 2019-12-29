@@ -1,44 +1,160 @@
-{
-    "rooms": [
-    {
-        "roomKey":"room1",
-        "roomLabel":"family room",
-        "devices":[
+﻿{
+        "rooms": [
         {
-            "numRows":"7",
-            "numCols":"3",
-            "deviceKey": "roku",
-            "deviceLabel": "Roku",
-            "buttonKeys": ["menu", "pause", "fastFoward"]
-        }
-        ]
-    }
-    ],
-
-    "buttons":[
-    {
-        "buttonKey":"menu",
-        "buttonText": "Menu",
-        "imagePath": "menu.jpg",
-        "urlPrefix": "192.168.255.1",
-        "urlMiddle": "",
-        "urlSuffix": "suffixmenu"
-    },
-    {
-        "buttonKey":"pause",
-        "buttonText": "Pause",
-        "imagePath": "",
-        "urlPrefix": "2.2.2.2",
-        "urlMiddle": "pausemiddle",
-        "urlSuffix": "pausesuffix"
-    },
-    {
-        "buttonKey":"fastFoward",
-        "buttonText": "",
-        "imagePath": “ff.jpg",
-        "urlPrefix": "33.33",
-        "urlMiddle": "ffmid",
-        "urlSuffix": "ffsuffix"
-    }
-    ]
+            "roomKey":"FamilyRoom",
+            "roomLabel":"FamilyRoom",
+            "devices":[{
+                "numRows":"7",
+                "numCols":"3",
+                "deviceKey": "rokuultra",
+                "deviceLabel": "Roku",
+                "buttonKeys": ["rokuultra_home", "rokuultra_hdmi2", "rokuultra_play", "", "rokuultra_up", "", "rokuultra_left", "rokuultra_ok", "rokuultra_right", "","rokuultra_down",  ""]
+            },
+            {
+                "numRows":"7",
+                "numCols":"3",
+                "deviceKey": "sonysoundbar",
+                "deviceLabel": "sonysoundbar",
+                "buttonKeys": ["sb_vol+", "sb_vol-", "sb_mute", "sb_sw+", "sb_sw-", ""]
+            }]
+        },
+        {
+            "roomKey":"study",
+            "roomLabel":"Study",
+            "devices":[{
+                "numRows":"7",
+                "numCols":"3",
+                "deviceKey": "tcltv",
+                "deviceLabel": "tcltv",
+                "buttonKeys": ["rokutcl_home", "rokutcl_hdmi2", "rokutcl_play", "", "rokutcl_up", "", "rokutcl_left", "rokutcl_ok", "rokutcl_right", "", "rokutcl_down",  "" ]
+           }]
+        }],
+        "buttons":[
+            {
+                "buttonKey":"rokutcl_home",
+                "buttonText": "home",
+                "imagePath": "home.png",
+                "url": "192.168.1.7/launch/contentID=12/keypress/Home"
+            },
+            {
+                "buttonKey":"rokutcl_play",
+                "buttonText": "play",
+                "imagePath": "",
+                "url": "192.168.1.7/launch/contentID=12/keypress/Play"
+            },
+            {
+                "buttonKey":"rokutcl_hdmi2",
+                "buttonText": "hdmi2",
+                "imagePath": "",
+                "url": "192.168.1.7/launch/contentID=12/keypress/InputHDMI2"
+            },
+            {
+               "buttonKey":"rokutcl_up",
+                "buttonText": "up",
+                "imagePath": "up_arrow.png",
+                "url": "192.168.1.7/launch/contentID=12/keypress/Up"
+            },
+            {
+               "buttonKey":"rokutcl_left",
+                "buttonText": "left",
+                "imagePath": "left_arrow.png",
+                "url": "192.168.1.7/launch/contentID=12/keypress/Left"
+            },
+            {
+               "buttonKey":"rokutcl_right",
+                "buttonText": "right",
+                "imagePath": "right_arrow.png",
+                "url": "192.168.1.7/launch/contentID=12/keypress/Right"
+            },
+            {
+               "buttonKey":"rokutcl_down",
+                "buttonText": "down",
+                "imagePath": "down_arrow.png",
+                "url": "192.168.1.7/launch/contentID=12/keypress/Down"
+            },
+            {
+               "buttonKey":"rokutcl_ok",
+                "buttonText": "",
+                "imagePath": "ok.png",
+                "url": "192.168.1.7/launch/contentID=12/keypress/Select"
+            },
+            {
+                "buttonKey":"rokuultra_home",
+                "buttonText": "home",
+                "imagePath": "home.png",
+                "url": "192.168.1.17/launch/contentID=12/keypress/Home"
+            },
+            {
+                "buttonKey":"rokuultra_play",
+                "buttonText": "play",
+                "imagePath": "",
+                "url": "192.168.1.17/launch/contentID=12/keypress/Play"
+            },
+            {
+                "buttonKey":"rokuultra_hdmi2",
+                "buttonText": "hdmi2",
+                "imagePath": "",
+                "url": "192.168.1.17/launch/contentID=12/keypress/InputHDMI2"
+            },
+            {
+               "buttonKey":"rokuultra_up",
+                "buttonText": "up",
+                "imagePath": "up_arrow.png",
+                "url": "192.168.1.17/launch/contentID=12/keypress/Up"
+            },
+            {
+               "buttonKey":"rokuultra_left",
+                "buttonText": "left",
+                "imagePath": "left_arrow.png",
+                "url": "192.168.1.17/launch/contentID=12/keypress/Left"
+            },
+            {
+               "buttonKey":"rokuultra_right",
+                "buttonText": "right",
+                "imagePath": "right_arrow.png",
+                "url": "192.168.1.17/launch/contentID=12/keypress/Right"
+            },
+            {
+               "buttonKey":"rokuultra_down",
+                "buttonText": "down",
+                "imagePath": "down_arrow.png",
+                "url": "192.168.1.17/launch/contentID=12/keypress/Down"
+            },
+            {
+               "buttonKey":"rokuultra_ok",
+                "buttonText": "",
+                "imagePath": "ok.png",
+                "url": "192.168.1.17/launch/contentID=12/keypress/Select"
+            },
+            {
+               "buttonKey":"sb_vol+",
+                "buttonText": "vol+",
+                "imagePath": "",
+                "url": "http://<IP>:port/msg?code=240C:SONY:15&pass=1234"
+            },
+            {
+               "buttonKey":"sb_vol-",
+                "buttonText": "vol-",
+                "imagePath": "",
+                "url": "http://<IP>:port/msg?code=640C:SONY:15&pass=1234"
+            },
+            {
+               "buttonKey":"sb_sw+",
+                "buttonText": "SW+",
+                "imagePath": "",
+                "url": "http://<IP>:port/msg?code=1D0C:SONY:15&pass=1234"
+            },
+            {
+               "buttonKey":"sb_sw-",
+                "buttonText": "SW-",
+                "imagePath": "",
+                "url": "TODO"
+            },
+            {
+               "buttonKey":"sb_mute",
+                "buttonText": "mute",
+                "imagePath": "",
+                "url": "http://<IP>:port/msg?code=140C:SONY:15&pass=1234"
+            }
+ 		]
 }

@@ -6,14 +6,14 @@
     android:layout_height="wrap_content">
 
     <Button
+        android:background="@color/darkGray"
         android:layout_gravity="center"
         tools:text="room 1!"
         android:id="@+id/singleRoomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorAccent"
         android:layout_margin="8dp"
         android:padding="8dp"
-        />
+    />
 </LinearLayout>

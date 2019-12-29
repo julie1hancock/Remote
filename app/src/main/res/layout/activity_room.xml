@@ -5,9 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ui.MainActivity">
+    tools:context="ui.MainActivity"
+    android:background="@color/darkGray">
 
     <androidx.appcompat.widget.Toolbar
+
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -20,6 +22,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:textColor="@color/colorAccent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/toolbarTitle"
@@ -30,6 +33,7 @@
                 />
 
             <Button
+                android:textColor="@color/colorAccent"
                 android:background="@color/transparent"
                 android:text="Change Room"
                 android:padding="8dp"
@@ -40,6 +44,7 @@
                 app:layout_constraintEnd_toStartOf="@id/enableDebug"
                 />
         <Button
+            android:textColor="@color/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:background="@color/transparent"
@@ -48,6 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/enableDebug"
+            android:visibility="gone"
             />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -55,6 +61,8 @@
     </androidx.appcompat.widget.Toolbar>
 
     <com.google.android.material.tabs.TabLayout
+        app:tabTextColor="@color/colorAccent"
+        app:tabIndicatorColor="@color/colorAccentLight"
         android:id="@+id/tabLayout"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"

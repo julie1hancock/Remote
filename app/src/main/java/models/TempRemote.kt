@@ -15,11 +15,10 @@ data class TempRemote(
             room.devices.forEach { device ->
                 device.buttons.forEach { button ->
                     val buttonToCopy = buttonList.find(button.buttonKey)
-                    button.buttonText = buttonToCopy.buttonText
-                    button.imagePath = buttonToCopy.imagePath
-                    button.urlPrefix = buttonToCopy.urlPrefix
-                    button.urlMiddle = buttonToCopy.urlMiddle
-                    button.urlSuffix = buttonToCopy.urlSuffix
+
+                    button.buttonText = buttonToCopy?.buttonText
+                    button.imagePath = buttonToCopy?.imagePath
+                    button.url = buttonToCopy?.url
                 }
             }
         }
