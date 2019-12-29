@@ -2,7 +2,7 @@
         "rooms": [
         {
             "roomKey":"FamilyRoom",
-            "roomLabel":"FamilyRoom",
+            "roomLabel":"Family Room",
             "devices":[{
                 "numRows":"7",
                 "numCols":"3",
@@ -14,7 +14,7 @@
                 "numRows":"7",
                 "numCols":"3",
                 "deviceKey": "sonysoundbar",
-                "deviceLabel": "sonysoundbar",
+                "deviceLabel": "Sony Soundbar",
                 "buttonKeys": ["sb_vol-", "sb_vol+", "sb_mute", "sb_sw+", "sb_sw-"]
             }]
         },
@@ -25,7 +25,7 @@
                 "numRows":"7",
                 "numCols":"3",
                 "deviceKey": "tcltv",
-                "deviceLabel": "tcltv",
+                "deviceLabel": "TCL tv",
                 "buttonKeys": ["rokutcl_home", "rokutcl_hdmi2", "rokutcl_play", "", "rokutcl_up", "", "rokutcl_left", "rokutcl_ok", "rokutcl_right", "", "rokutcl_down",  "" ]
            }]
         }],

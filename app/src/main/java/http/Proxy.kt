@@ -2,16 +2,19 @@ package http
 
 import java.io.InputStream
 import java.io.InputStreamReader
+import java.lang.Exception
 import java.net.HttpURLConnection
+import java.net.MalformedURLException
 import java.net.SocketTimeoutException
 import java.net.URL
 
 object Proxy {
 
     fun send(urlString: String): String {
+        val validatedURLString = urlString.validateURL()
+        if(validatedURLString.toLowerCase().contains("error")) return validatedURLString
 
-        val url = URL(urlString.validateURL())
-
+        val url = URL(validatedURLString)
         val http : HttpURLConnection = url.openConnection() as HttpURLConnection
         http.requestMethod = "GET" //"POST" ???
         http.doOutput = false
@@ -53,6 +56,16 @@ object Proxy {
 }
 
 private fun String.validateURL(): String {
-    return if(this.startsWith("http")) this
+//    if(!this.contains(".")) return "ERROR: invalid url"
+    if(this.toLowerCase() == "todo") return "ERROR: invalid url"
+    val newURL = if(this.startsWith("http")) this
     else "https://$this"
+    try{
+        URL(newURL)
+    } catch (mue: MalformedURLException){
+        return "ERROR:: Invalid URL: ${mue.cause}"
+    } catch (e: Exception){
+        return "ERROR: ${e.javaClass} : ${e.cause}"
+    }
+    return newURL
 }

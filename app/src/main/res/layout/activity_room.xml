@@ -21,19 +21,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:textColor="@color/colorAccent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+
+            <Button
+                style="@style/smalllabel"
+                android:textAllCaps="false"
+                android:background="@color/transparent"
+                android:text="Cool room"
+                android:padding="8dp"
                 android:id="@+id/toolbarTitle"
+                android:clickable="false"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:textSize="16dp"
                 />
 
             <Button
-                android:textColor="@color/colorAccent"
+                style="@style/smalllabel"
+
                 android:background="@color/transparent"
                 android:text="Change Room"
                 android:padding="8dp"
