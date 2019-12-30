@@ -19,7 +19,7 @@
             }]
         },
 
-        
+
         {
             "roomKey":"study",
             "roomLabel":"Study",
@@ -36,7 +36,7 @@
                 "buttonKey":"rokutcl_home",
                 "buttonText": "home",
                 "imagePath": "home.png",
-                "url": "192.168.1.7/launch/contentID=12/keypress/Home"
+                "url": "192.168.1.7:8060/keypress/home"
             },
             {
                 "buttonKey":"rokutcl_play",
