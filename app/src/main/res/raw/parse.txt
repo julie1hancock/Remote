@@ -18,6 +18,8 @@
                 "buttonKeys": ["sb_vol-", "sb_vol+", "sb_mute", "sb_sw+", "sb_sw-"]
             }]
         },
+
+        
         {
             "roomKey":"study",
             "roomLabel":"Study",
@@ -78,6 +80,8 @@
                 "imagePath": "ok.png",
                 "url": "192.168.1.7/launch/contentID=12/keypress/Select"
             },
+
+
             {
                 "buttonKey":"rokuultra_home",
                 "buttonText": "home",
