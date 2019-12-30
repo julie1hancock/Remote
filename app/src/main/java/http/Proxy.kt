@@ -19,7 +19,7 @@ object Proxy {
         val http : HttpURLConnection = url.openConnection() as HttpURLConnection
         http.requestMethod = "POST"
         http.doOutput = true
-
+        http.connectTimeout = 8000
         try{
             http.connect()
         }
